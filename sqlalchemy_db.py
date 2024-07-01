@@ -5,7 +5,7 @@ from Config import setting
 
 SQLALCHEMY_db_URL = f'postgresql://{setting.database_username}:{setting.database_password}@{setting.database_hostname}:{setting.database_port}/{setting.database_name}'
 
-engine = create_engine(SQLALCHEMY_db_URL)
+engine = create_engine(SQLALCHEMY_db_URL, pool_size=10, max_overflow=20)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
