@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from Config import setting
 
-SQLALCHEMY_db_URL = setting.sqlalchemy_db_url
+SQLALCHEMY_db_URL = f'postgresql+psycopg2://{setting.database_username}:{setting.database_password}@{setting.database_hostname}:{setting.database_port}/{setting.database_name}'
 
 engine = create_engine(SQLALCHEMY_db_URL, pool_size=10, max_overflow=20)
 
