@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     database_name: str
     database_port: str
     secret_key: str
-    time_at_expiration: int
+    time_at_expiration: str
     algorithm: str
 
 
