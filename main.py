@@ -31,7 +31,7 @@ app.include_router(vote.router)
 
 @app.get('/')
 def hello():
-    return {'Hello': 'World'}
+    return {'Message': 'Pushing changes to the ubuntu(production)'}
 
 @app.get('/sqlalchemy')
 async def test_posts(Db : Session = Depends(get_db)):
