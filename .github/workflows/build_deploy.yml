@@ -6,6 +6,7 @@ jobs:
   build:
     environment:
       name: testing
+
     env:
       DATABASE_HOSTNAME: ${{secrets.DATABASE_HOSTNAME}}
       DATABASE_PORT: ${{secrets.DATABASE_PORT}}
@@ -71,10 +72,10 @@ jobs:
 #      - name: Image digest
 #        run: echo ${{ steps.docker_build.outputs.digest }}
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: [build]
-
-    steps:
-      - name: deploying stuff
-        run: echo "dd"
+#  deploy:
+#    runs-on: ubuntu-latest
+#    needs: [build]
+#
+#    steps:
+#      - name: deploying stuff
+#        run: echo "dd"
