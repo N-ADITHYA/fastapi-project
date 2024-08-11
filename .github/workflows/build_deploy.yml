@@ -70,7 +70,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: [build]
-
+    environment:
+      name: production
     steps:
       - name: deploying stuff
         run: echo "going to deploy some stuff"
