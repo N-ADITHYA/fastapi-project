@@ -1,4 +1,2 @@
-import os
-
-path = os.getenv('Path')
-print(path)
+import sys
+print(sys.version)

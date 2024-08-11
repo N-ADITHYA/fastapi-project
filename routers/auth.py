@@ -25,7 +25,7 @@ def signup(userAcc: schemas.UserCreate, Db: Session = Depends(get_db)):
 
 
     return userdata_dict
-@router.post('/login')
+@router.post('/login', response_model=schemas.Token)
 def login(user_credentials: OAuth2PasswordRequestForm = Depends(), Db: Session = Depends(get_db)):
     user_det = Db.query(models.User).filter(models.User.email == user_credentials.username).first()
 

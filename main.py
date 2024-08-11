@@ -1,4 +1,4 @@
-from fastapi import FastAPI,Depends
+from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 import models
 from sqlalchemy_db import get_db
@@ -31,7 +31,7 @@ app.include_router(vote.router)
 
 @app.get('/')
 def hello():
-    return {'Message': 'Pushing changes to the ubuntu(production)'}
+    return {'Message': 'bind mount works well !!!!!'}
 
 @app.get('/sqlalchemy')
 async def test_posts(Db : Session = Depends(get_db)):
