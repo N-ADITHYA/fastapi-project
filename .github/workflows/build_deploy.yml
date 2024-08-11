@@ -74,3 +74,17 @@ jobs:
     steps:
       - name: deploying stuff
         run: echo "going to deploy some stuff"
+
+  #login to ubuntu server
+  # cd /fastpp/src
+  #systemctl restart api
+      - name: deploy to ubuntu server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.PROD_HOST}}
+          username: ${{ secrets.PROD_USERNAME}}
+          password: ${{ secrets.PROD_PASSWORD}}
+          script: |
+            cd fastpp/src
+            git pull
+            sudo systemctl restart api
