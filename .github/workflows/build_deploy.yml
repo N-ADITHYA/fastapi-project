@@ -68,7 +68,7 @@ jobs:
 #        run: echo ${{ steps.docker_build.outputs.digest }}
 
   deploy:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     needs: [build]
 
     steps:
