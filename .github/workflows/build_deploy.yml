@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: pulling
-        uses: actions/checkout@v6
+        uses: actions/checkout@v2
       - name: say hello
         run: echo "Hello ll"
 #    environment:
