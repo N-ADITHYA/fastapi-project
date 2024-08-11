@@ -63,6 +63,7 @@ jobs:
         with:
           context: ./
           file: ./Dockerfile
+          builder:
           push: true
           tags: ${{secrets.DOCKER_HUB_USERNAME}}/fastapi :latest
           cache-from: type=local,src=/tmp/.buildx-cache
