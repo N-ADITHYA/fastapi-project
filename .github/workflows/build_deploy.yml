@@ -5,14 +5,14 @@ on: [push, pull_request]
 jobs:
   job1:
     env:
-      DATABASE_HOSTNAME: localhost
-      DATABASE_PORT: 5432
-      DATABASE_PASSWORD: Adithya1
-      DATABASE_NAME: fastapi
-      DATABASE_USERNAME: postgres
-      SECRET_KEY: F1D42872D4639332A11923B1DA7557DC40CD97F4442BB802CC0826C5A0010BCD
-      ALGORITHM: HS256
-      TIME_AT_EXPIRATION: 30
+      DATABASE_HOSTNAME: ${{secrets.DATABASE_HOSTNAME}}
+      DATABASE_PORT: ${{secrets.DATABASE_PORT}}
+      DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+      DATABASE_NAME: ${{secrets.DATABASE_NAME}}
+      DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
+      SECRET_KEY: ${{secrets.SECRET_KEY}}
+      ALGORITHM: ${{secrets.ALGORITHM}}
+      TIME_AT_EXPIRATION: ${{secrets.TIME_AT_EXPIRATION}}
 
     runs-on: ubuntu-latest
     steps:
