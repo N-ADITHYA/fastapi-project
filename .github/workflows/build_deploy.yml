@@ -73,25 +73,12 @@ jobs:
     environment:
       name: production
     steps:
-#      - name: deploying stuff
-#        run: echo "going to deploy some stuff"
-#      - uses: actions/checkout@v3
-#      - name: Set up SSH
-#        run: |
-#              echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
-#              chmod 600 ~/.ssh/id_rsa
-#              ssh-keyscan ${{ secrets.PROD_HOST }} >> ~/.ssh/known_hosts
-  #login to ubuntu server
-  # cd /fastpp/src
-  #systemctl restart api
       - name: deploy to ubuntu server
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.PROD_HOST}}
-          username: ${{ secrets.PROD_USERNAME}}
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USER }}
           password: ${{ secrets.PROD_PASSWORD }}
-#          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-#          key: ${{secrets.SSH_PRIVATE_KEY}}
           script: |
             cd fastpp/src
             git pull
