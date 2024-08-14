@@ -89,7 +89,7 @@ jobs:
         with:
           host: ${{ secrets.PROD_HOST}}
           username: ${{ secrets.PROD_USERNAME}}
-          password: Adithya1
+          password: ${{ secrets.PROD_PASSWORD }}
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 #          key: ${{secrets.SSH_PRIVATE_KEY}}
           script: |
